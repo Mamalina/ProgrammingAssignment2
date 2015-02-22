@@ -6,7 +6,7 @@
 ## list which allows us to access its set,get,setInverse,getInverse method.
 
 makeCacheMatrix <- function(x = matrix()) {
-  i = NULL  ## till the inverse of a matrix is not calculated it is NULL.
+  i = NULL  ## till the inverse of a matrix is not calculated "i" is NULL.
   set <- function(y){
     x <<- y
     i <<- NULL
@@ -32,10 +32,10 @@ cacheSolve <- function(x, ...) {
   if (!is.null(i)){
     message("getting cache data")
     return(i)
-  } ## if it has already been calculated simply returns the value that is present in cache
+  } ## if inverse has already been calculated simply returns the value that is present in cache
   data <- x$get() ## if not fetches the new matrix
   i <- solve(data) ## calculates inverse
-  x$setInverse(i) ## and puts in the cache
+  x$setInverse(i) ## puts in the cache
   i 
   ## Return a matrix that is the inverse of 'x'
 }
